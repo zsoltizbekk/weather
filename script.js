@@ -42,15 +42,15 @@ weatherApi();
 async function weatherApi(){
     try{ 
         errorMsg.innerHTML = "";   
-        let response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=79c45abbb243e86334d566d4c608d84b&units=${unit}`, {mode : 'cors'});
+        let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=79c45abbb243e86334d566d4c608d84b&units=${unit}`, {mode : 'cors'});
         
         let weather = await response.json();
-        response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=79c45abbb243e86334d566d4c608d84b`, {mode : 'cors'})
+        response = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=79c45abbb243e86334d566d4c608d84b`, {mode : 'cors'})
         let coordinate = await response.json();
         console.log(coordinate[0].lat);
         console.log(coordinate[0].lon);
 
-        response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${coordinate[0].lat}&lon=${coordinate[0].lon}&appid=79c45abbb243e86334d566d4c608d84b&units=${unit}`)
+        response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${coordinate[0].lat}&lon=${coordinate[0].lon}&appid=79c45abbb243e86334d566d4c608d84b&units=${unit}`)
         let forecast = await response.json();
         console.log(forecast);
         display(weather);
