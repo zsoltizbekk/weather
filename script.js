@@ -23,7 +23,18 @@ search.addEventListener("click", function(){
         console.log(city);
         weatherApi();
     }
-})
+});
+
+inputBox.addEventListener("click", function(){
+    inputBox.value = "";
+});
+
+inputBox.addEventListener("keyup", (e) => {
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      search.click();
+    }
+  });
 
 tempBtn.addEventListener("click", function(){
     if (unit == "imperial"){
