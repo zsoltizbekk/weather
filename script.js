@@ -15,7 +15,8 @@ let city = "Debrecen";
 
 search.addEventListener("click", function(){
     if (inputBox.value == ""){
-        errorMsg.innerHTML = "Cannot be empty!"
+        inputBox.value = "Cannot be empty!"
+        inputBox.style = "border: red 1px solid; border-radius: 3px;";
     } else {
         errorMsg.innerHTML = "";
         city = inputBox.value;
