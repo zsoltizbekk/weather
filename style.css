@@ -9,6 +9,8 @@
     animation: fadein;
     animation-duration: 1s;
     opacity: 1;
+    margin: 0;
+    padding: 0;
 }
 
 @keyframes fadein{
@@ -20,6 +22,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin: 5px;
 }
 
 .header-content {
@@ -41,7 +44,7 @@
 }
 
 .container {
-
+    height: 95vh;
 }
 
 .input-box {
@@ -75,6 +78,7 @@ img {
     filter: drop-shadow(5px 5px 5px #222);
 }
 
+
 .temperature {
     font-size: 2.5rem;
     text-shadow: 2px 2px 7px black;
@@ -103,4 +107,26 @@ img {
 .today {
     display: flex;
     gap: 15px;
+}
+
+.footer {
+    display: flex;
+    height: 5vh;
+    font-size: 0.75rem;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: #383838;
+    color: #FFC600;
+}
+
+.footer-img {
+    filter: invert(63%) sepia(61%) saturate(774%) hue-rotate(4deg) brightness(111%) contrast(102%);
+    width: 20px;
+    height: 20px;
+}
+
+.footer-img:hover {
+    transition: transform 0.3s ease-in-out;
+    transform: rotate(360deg) scale(1.4);
 }
